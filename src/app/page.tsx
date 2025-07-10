@@ -12,10 +12,17 @@ export default function HomePage() {
     const [filteredCountries, setFilteredCountries] = useState<Country[]>([])
 
     useEffect(() => {
-        getAllCountries().then((data) => {
-            setAllCountries(data)
-            setFilteredCountries(data)
-        })
+        const fetchCountries = async () => {
+            try {
+                const data = await getAllCountries()
+                setAllCountries(data)
+                setFilteredCountries(data)
+            } catch (error) {
+                console.error('Error fetching countries:', error)
+            }
+        }
+
+        fetchCountries().then();
     }, [])
 
     const handleSearch = (term: string) => {

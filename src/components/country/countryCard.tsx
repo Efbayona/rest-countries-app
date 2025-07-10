@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import styles from '@/styles/components/countrycard.module.scss'
+import Image from "next/image"
 
 interface Country {
     name: string
@@ -22,7 +23,14 @@ export default function CountryCard({ country }: CountryCardProps) {
         <Link href={`/country/${slug}`} className={styles.link}>
             <div className={styles.card}>
                 <div className={styles.flag}>
-                    <span>{country.flag}</span>
+                    <Image
+                        src={country.flag}
+                        alt={`${country.name} flag`}
+                        width={320}
+                        height={213}
+                        layout="responsive"
+                        objectFit="cover"
+                    />
                 </div>
                 <div className={styles.content}>
                     <h3 className={styles.title}>{country.name}</h3>

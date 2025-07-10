@@ -9,7 +9,7 @@ interface Country {
         svg: string
         png: string
     }
-    population: number | string
+    population: number
     region: string
     capital: string[]
 }

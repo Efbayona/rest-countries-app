@@ -7,7 +7,7 @@ export interface Country {
         svg: string
         alt?: string
     }
-    population: number | string
+    population: number
     region: string
     capital: string[]
 }
