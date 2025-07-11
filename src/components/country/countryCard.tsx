@@ -10,20 +10,17 @@ interface CountryCardProps {
 }
 
 export default function CountryCard({ country }: CountryCardProps) {
-    // const slug = country.name.common.toLowerCase().replace(/\s+/g, '-')
     const slug = country.name.common.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, '-')
     
     return (
         <Link href={`/country/${slug}`} className={styles.link}>
-            <div className={styles.card}>
+            <div className={styles.contentCard}>
                 <div className={styles.flag}>
                     <Image
-                        src={country.flags?.svg || "🏳️"}
+                        src={country.flags?.svg || ""}
                         alt={`${country.name.common} flag`}
-                        width={320}
-                        height={213}
-                        layout="responsive"
-                        objectFit="cover"
+                        fill
+                        style={{objectFit: "cover"}}
                     />
                 </div>
                 <div className={styles.content}>

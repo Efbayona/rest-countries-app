@@ -3,8 +3,8 @@ import { Inter } from "next/font/google"
 import "@/styles/globals.scss"
 import styles from "@/styles/components/layout.module.scss"
 import { ThemeProvider } from "@/components/theme-provider"
-import { ModeToggle } from "@/components/mode-toggle/modeToggle"
-import React from "react";
+import React from "react"
+import Header from "@/components/header/header"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -13,15 +13,13 @@ export const metadata: Metadata = {
     description: "Explore countries around the world",
 }
 
-export default function RootLayout({children,}: { children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" suppressHydrationWarning>
         <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className={styles.root}>
-                <div className={styles.toggleWrapper}>
-                    <ModeToggle />
-                </div>
+                <Header /> {/* 👈 Header global */}
                 {children}
             </div>
         </ThemeProvider>

@@ -1,4 +1,5 @@
 .wrapper {
+  min-width: 100vw;
   min-height: 100vh;
   background-color: var(--background);
   color: var(--text);
@@ -9,15 +10,48 @@
 .header {
   background-color: var(--element);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  padding: 1rem 0;
+  padding: 1rem 10rem;
   border-bottom: 1px solid var(--border);
 }
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 auto;
-  padding: 0 1rem;
+
+  .toggleButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    color: var(--text);
+    transition: transform 0.3s ease;
+  }
+
+  .icon {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .toggleButton:hover .icon {
+    transform: rotate(20deg) scale(1.1);
+  }
+
+  .sunIcon, .moonIcon {
+    width: 20px;
+    height: 20px;
+  }
+
 }
 
 .title {
@@ -27,5 +61,5 @@
 
 .main {
   flex-grow: 1;
-  padding: 2rem 1rem;
+  padding: 2rem 10rem;
 }

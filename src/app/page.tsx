@@ -22,7 +22,7 @@ export default function HomePage() {
             }
         }
 
-        fetchCountries().then();
+        fetchCountries()
     }, [])
 
     const handleSearch = (term: string) => {
@@ -41,12 +41,6 @@ export default function HomePage() {
 
     return (
         <div className={styles.wrapper}>
-            <header className={styles.header}>
-                <div className={styles.container}>
-                    <h1 className={styles.title}>Where in the world?</h1>
-                </div>
-            </header>
-
             <main className={styles.main}>
                 <SearchAndFilter onSearch={handleSearch} onFilter={handleFilter} />
                 <CountriesGrid countries={filteredCountries} />

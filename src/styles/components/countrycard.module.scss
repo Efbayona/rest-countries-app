@@ -1,11 +1,9 @@
-.link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.card {
+.contentCard {
+  height: 420px;
   background-color: var(--element);
-  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
@@ -15,32 +13,40 @@
     transform: scale(1.03);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   }
-}
 
-.flag {
-  aspect-ratio: 3 / 2;
-  background-color: var(--background);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-}
+  .flag {
+    position: relative;
+    background-color: var(--background);
+    height: 55%;
+    width: 100%;
 
-.content {
-  padding: 1.5rem;
-}
+    img {
+      object-fit: cover;
+    }
+  }
 
-.title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
+  .content {
+    height: 45%;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-.meta p {
-  font-size: 0.9rem;
-  margin-bottom: 0.4rem;
+    .title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
 
-  strong {
-    font-weight: 600;
+    .meta p {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+
+      strong {
+        font-weight: 600;
+      }
+    }
   }
 }
+

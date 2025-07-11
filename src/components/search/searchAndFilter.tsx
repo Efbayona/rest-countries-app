@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import styles from '@/styles/components/searchandfilter.module.scss'
+import { Search , ChevronDown } from 'lucide-react'
 
 type Props = {
     onSearch: (term: string) => void
@@ -27,24 +28,28 @@ export default function SearchAndFilter({ onSearch, onFilter }: Props) {
     return (
         <div className={styles.wrapper}>
             <div className={styles.searchContainer}>
-                <span className={styles.icon}>🔍</span>
-                <input
-                    type="text"
-                    placeholder="Search for a country..."
-                    value={term}
-                    onChange={handleSearch}
-                    className={styles.input}
+                <Search className={styles.icon} size={20}/>
+                <input type="text"
+                       placeholder="Search for a country..."
+                       value={term}
+                       onChange={handleSearch}
+                       className={styles.input}
                 />
             </div>
 
-            <select value={region} onChange={handleFilter} className={styles.select}>
-                <option value="">Filter by Region</option>
-                <option value="Africa">Africa</option>
-                <option value="Americas">Americas</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
+            <div className={styles.selectWrapper}>
+                <select
+                    value={region}
+                    onChange={handleFilter} className={styles.select}>
+                    <option value="">Filter by Region</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+                <ChevronDown className={styles.arrow} size={18}/>
+            </div>
         </div>
     )
 }
