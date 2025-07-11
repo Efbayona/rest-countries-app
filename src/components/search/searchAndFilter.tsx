@@ -38,9 +38,7 @@ export default function SearchAndFilter({ onSearch, onFilter }: Props) {
             </div>
 
             <div className={styles.selectWrapper}>
-                <select
-                    value={region}
-                    onChange={handleFilter} className={styles.select}>
+                <select value={region} onChange={handleFilter} className={styles.select}>
                     <option value="">Filter by Region</option>
                     <option value="Africa">Africa</option>
                     <option value="Americas">Americas</option>

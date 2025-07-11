@@ -5,10 +5,6 @@
   gap: 1rem;
   margin-bottom: 3.4rem;
 
-  @media (min-width: 640px) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
 }
 
 .searchContainer {
@@ -73,4 +69,27 @@
     color: var(--text);
   }
 
+}
+
+@media (max-width: 640px) {
+
+  .wrapper {
+    gap: 4rem;
+  }
+
+  .searchContainer {
+    width: 100%;
+  }
+
+  .selectWrapper {
+    width: 60%;
+
+  }
+
+}
+
+@media (min-width: 1024px) {
+}
+
+@media (min-width: 1280px) {
 }
