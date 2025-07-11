@@ -1,5 +1,5 @@
 .detailWrapper {
-  width: 100vw;
+  //width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,6 +9,9 @@
     width: 100%;
 
     .backButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       background-color: var(--element);
       border: none;
       padding: 0.5rem 2rem;
@@ -29,9 +32,7 @@
     gap: 3rem;
 
     .flag {
-      width: 50%;
       max-width: 560px;
-      aspect-ratio: 3 / 2;
 
       img {
         width: 100%;
@@ -42,87 +43,60 @@
       }
     }
 
-    .content-details {
+    .contentDetails {
       width: 50%;
       display: flex;
-      justify-content: center;
-      align-items: center;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
       gap: 1rem;
 
       .infoCountry {
-        width: 100%;
         display: flex;
+        gap: 2rem;
 
-        .column {
-          width: 50%;
+        .firstColumn {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
         }
 
+        .secondColumn {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+      }
+
+      .borders {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
       }
 
     }
   }
 
-
 }
 
-
-.name {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-.columns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2rem;
-
-  //@media (min-width: 768px) {
-  //  flex-direction: row;
-  //  gap: 4rem;
-  //}
-  //
-  //p {
-  //  margin: 0.3rem 0;
-  //}
-}
-
-//.column {
-//  flex: 1;
-//}
-
-//.borders {
-//  display: flex;
-//  flex-direction: column;
-//  gap: 1rem;
-//
-//  strong {
-//    font-weight: 600;
-//  }
-//}
-//
-//.badgeContainer {
-//  display: flex;
-//  flex-wrap: wrap;
-//  gap: 0.5rem;
-//}
-//
-//.badge {
-//  background-color: var(--element);
-//  padding: 0.4rem 1.2rem;
-//  border-radius: 4px;
-//  font-size: 0.9rem;
-//  box-shadow: 0 0 3px rgba(0, 0, 0, 0.05);
-//}
 
 @media (max-width: 640px) {
-
   .detailWrapper {
     padding: 3rem 4rem;
   }
 
+  .detailWrapper .content {
+    flex-direction: column;
+  }
+
+  .detailWrapper .content .contentDetails {
+    width: 100%;
+  }
 }
+
 
 @media (min-width: 1024px) {
 

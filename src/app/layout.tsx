@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className={styles.root}>
-                <Header /> {/* 👈 Header global */}
+                <Header />
                 {children}
             </div>
         </ThemeProvider>

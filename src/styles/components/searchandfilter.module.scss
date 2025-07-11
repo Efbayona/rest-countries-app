@@ -9,7 +9,7 @@
 
 .searchContainer {
   position: relative;
-  width: 32rem;
+  width: 24rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,6 +44,7 @@
 }
 
 .selectWrapper {
+  width: 14rem;
   position: relative;
   display: inline-block;
 
@@ -71,6 +72,23 @@
 
 }
 
+@media (min-width: 320px) {
+
+  .wrapper {
+    gap: 4rem;
+  }
+
+  .searchContainer {
+    width: 100%;
+  }
+
+  .selectWrapper {
+    width: 60%;
+
+  }
+
+}
+
 @media (max-width: 640px) {
 
   .wrapper {
@@ -92,4 +110,16 @@
 }
 
 @media (min-width: 1280px) {
+
+  .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .searchContainer {
+    width: 34rem;
+  }
+  .selectWrapper {
+    width: 20rem;
+  }
 }

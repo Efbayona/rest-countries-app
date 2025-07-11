@@ -31,14 +31,14 @@ export default function CountryDetail({country}: CountryDetailProps) {
 					<h2 className={styles.name}>{country.name.common}</h2>
 					
 					<div className={styles.infoCountry}>
-						<div className={styles.column}>
+						<div className={styles.firstColumn}>
 							<p><strong>Native Name:</strong> {nativeName}</p>
 							<p><strong>Population:</strong> {country.population.toLocaleString()}</p>
 							<p><strong>Region:</strong> {country.region}</p>
 							<p><strong>Sub Region:</strong> {country.subregion || 'N/A'}</p>
 							<p><strong>Capital:</strong> {country.capital?.[0] || 'N/A'}</p>
 						</div>
-						<div className={styles.column}>
+						<div className={styles.secondColumn}>
 							<p><strong>Top Level Domain:</strong> {country.tld?.[0] || 'N/A'}</p>
 							<p><strong>Currencies:</strong> {currencies}</p>
 							<p><strong>Languages:</strong> {languages}</p>
